@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>讯飞在线语音</title>
+</head>
+<body>
+    <input id="input" value="" />
+    <button onclick="onBtn()">生成</button>
+    <p></p>
+    <audio id="audio" controls autoplay>
+        <source src="" type="audio/mpeg">
+        浏览器不支持audio播放
+    </audio>
+</body>
+<script>
+    var onBtn = function () {
+        var input = document.getElementById("input");
+        var audio = document.getElementById("audio");
+        if (input.value.trim() == "") {
+            alert("请填写");
+            return;
+        }
+
+        audio.src = "http://127.0.0.1:8080/ting/audio?text=" + input.value;
+
+    }
+</script>
+</html>
